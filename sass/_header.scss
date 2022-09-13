@@ -1,0 +1,148 @@
+@use "variables" as *;
+/* header rules _______________________________________________________________*/
+.home-header {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    nav {
+        ul {
+            padding-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            li {
+                margin-top: 9px;
+                margin-bottom: 9px;
+            }
+        }
+        a {
+            font-size: 1.8rem;
+            @media(min-width: $xl) {
+                font-size: 2.2rem;
+            }
+        }
+    }
+}
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media(min-width: $small) {
+        height: 0;
+        padding-bottom: 9 / 16 * 100%;
+        background-image: url("/medias/lieu16to9.jpg");
+        background-attachment: fixed;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-color: #aeaeae;
+    }
+    & > a {
+        width: 312px;
+        height: 207px;
+        margin-bottom: 12px;
+        @media(min-width: $medium) {
+            width: initial; //415px
+            height: initial; //275px
+        }
+    }
+}
+#logo {
+    opacity: 0;
+    animation-name: logo;
+    animation-duration: 1.3s;
+    animation-timing-function: linear;
+    animation-delay: 0.3s;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+}
+@keyframes logo {
+    0% {opacity: 0;}
+    20% {opacity: 0.2;}
+    40% {opacity: 0.4;}
+    60% {opacity: 0.6;}
+    80% {opacity: 0.8;}
+    100% {opacity: 1;}
+}
+
+/*Rules specific to page-header____________________________________________________________*/
+
+#page-header {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #eaecef;
+    #{$bg}: #fff;
+    @media(min-width: $min-nav-width) {
+        flex-direction: initial; 
+        align-items: center;
+    }
+    div {
+        display: flex; 
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        @media(min-width: $min-nav-width) {
+            width: initial;
+        }
+    }
+}
+.page-logo {
+    margin-left: 18px;
+    width: 110px;
+    height: 0;
+    padding-bottom: 80 / 120 * 110px;
+}
+.page-nav {
+    margin-right: 12px;
+    ul {
+        display: none;
+        flex-wrap: wrap;
+        @media(min-width: $min-nav-width) {
+            display: flex;
+        } 
+        li {
+            margin-top: 12px;
+            margin-bottom: 12px; 
+        }  
+    }
+}
+.responsive-nav {
+    ul {
+        padding-left: 0;
+        background-color: #fefefe;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        margin-top: 0;
+        width: 100vw;
+        @media(min-width: $min-nav-width) {
+            position: static;
+            margin-top: 12px;
+            width: initial;
+            flex-direction: initial;
+        }
+        li {
+            margin-top: initial;
+            margin-bottom: initial;
+            display: flex;
+            border-bottom: 1px solid #eaecef;
+            @media(min-width: $min-nav-width) {
+                border-bottom: initial;
+                margin-bottom: 4px;
+            }
+        }
+        a {
+            padding-left: 10rem;
+            width: 100%;
+            height: 100%;
+            @media(min-width: $min-nav-width) {
+                padding-left: initial;
+            }
+        }
+    }
+}

@@ -1,0 +1,223 @@
+@use "variables" as *;
+@use "sass:color";
+
+/* global rules _________________________________________________________________________*/
+:root {
+    box-sizing: border-box;
+    font-family: "Open Sans", system-ui, sans-serif;
+    font-size: 0.625em;
+    color: $main-font-color;
+    --main-font-color: #{$main-font-color};
+    --link-color: #{$link-color};
+    --strong-color: #{$strong-color};
+    --nav-color: #{$nav-color};
+    --vert: #{$vert};
+    --vert-dark: #{$vert-dark};
+    --mauve: #{$mauve};
+    --turquoise: #{$turquoise};
+    --bleu: #{$bleu};
+    --at-color: #{$main-font-color};
+    --blockquote-bg: #{$blockquote-bg};
+    --hr-color: #{$hr-color};
+    @media(min-width: $medium) {
+        --schedule-width: 80%;
+    }
+    --schedule-width: 100%;
+    --schedule-height: auto;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+body, :root {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 1.6rem;
+    background-color: #fefefe;
+}
+/*For Internet Explorer support*/
+main, section {
+    display: block;
+}
+main {
+    min-height: 100vh;
+    padding-bottom: 5rem;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: Quicksand, system-ui, sans-serif;
+    margin-bottom: 0;
+}
+h1 {
+    font-size: 3rem;
+    @media(min-width: $small) {
+        font-size: 3.5rem;
+    }
+}
+h2 {
+    font-size: 2.5rem;
+    @media(min-width: $small) {
+        font-size: 3rem;
+    }
+}
+h3 {
+    font-size: 2rem;
+    @media(min-width: $small) {
+        font-size: 2.5rem;
+    }
+}
+p, li {
+    text-overflow: ellipsis;
+}
+a {
+    &:link {
+        color: var(--strong-color);
+    }
+    &:visited {
+        color: var(--link-color);
+    }
+    &:active {
+        @media(pointer: fine) {
+            outline: 2.4px dashed;
+        }
+    }
+}
+nav a {
+    &:link {
+        color: inherit;
+        text-decoration: none;
+        margin: 12px 10px;
+        font-weight: initial;
+    }
+    &:visited {
+        color: inherit;
+    }
+    &:hover {
+        @media(min-width: $large) {
+            color: $nav-color;
+            text-decoration: none;
+        }
+    }
+}
+nav ul {
+    list-style: none;
+}
+img, object {
+    border: none; 
+    display: block; 
+    max-width: 100%;
+    height: auto;
+}
+figure {
+    margin: 0;
+}
+figcaption {
+    font-size: 1.2rem;
+}
+blockquote p, blockquote p a {
+    font-size: 1.725rem;
+    line-height: 1.5em;
+    word-spacing: 0.3em;
+    color: var(--strong-color); //#4353ff
+    font-family: Quicksand;
+    font-weight: 600;
+    margin: 1.4em 0;
+    text-align: left;
+    page-break-inside: avoid;
+    @media(min-width: 321px) {
+        font-size: 2rem;
+    }
+    @media(min-width: $large) {
+        font-size: 2.4rem;
+        margin: 0;
+    }
+}
+blockquote p::before {
+    content: "« ";
+}
+blockquote p::after {
+    content: " »";
+}
+table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
+    @media(min-width: $small) {
+        width: 75%;
+    }
+}
+table, th, td {
+    border: 1px solid $main-font-color;
+}
+th {
+    background-color: rgb(219, 217, 217);
+}
+td {
+    text-align: center;
+}
+hr {
+    color: #165bb9;
+    #{$bg}: #165bb9;
+    height: 2px;
+    border-radius: 2px;
+}
+pre, code {
+    background-color: #d8d9d8; //#dfdddd
+    font-size: inherit;
+    line-height: inherit;
+    overflow: auto;
+    border-radius: 3px;
+}
+pre {
+    padding: 10px 12px;
+}
+code {
+    padding: 2px 6px;
+}
+summary {
+    outline: none;
+    font-family: Quicksand, system-ui, sans-serif;
+}
+.color-white {
+    color: white;
+}
+.bold {
+    font-weight: 700;
+}
+.margin-bottom-0 {
+    margin-bottom: 0;
+}
+.big {
+    font-size: 2rem;
+}
+.flow > * + * {
+    margin-top: 1em;
+}
+
+.shadow-box {
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1), -2px 0px 4px 0 rgba(0, 0, 0, 0.1);   
+}
+
+.radius-std {
+    border-radius: 2.3px;
+}
+
+.radius-round {
+    border-radius: 50%;
+}
+
+.margin-top-2rem {
+    margin-top: 2rem;
+}
+
+.font-inherit {
+    font: inherit;
+}
+
+.visually-hidden {
+    visibility: hidden;
+}

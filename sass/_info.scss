@@ -1,0 +1,24 @@
+@use "variables" as *;
+@use "sass:color";
+.info {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    padding-right: 3%;
+    padding-left: 3%;
+    border: 3px solid var(--info-border-color, #{$nav-color});
+    border-radius: 3px;
+    /*Adding neon effect to container*/
+    //box-shadow: 0 0 8px 3px #fff, 0 0 10px #aecefd, 0 0 15px #28b8d8, 
+    //inset 0 0 6px 3px #fff, inset 0 0 8px #aecefd, inset 0 0 12px #28b8d8;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    background-color: #fff;
+    @media(min-width: $large) {
+        width: 75%;
+    }
+}
+
+.info[data-border-color='warning'] {
+    --info-border-color: #{color.scale(#7B1547, $lightness: 40%)};
+}

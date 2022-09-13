@@ -1,0 +1,35 @@
+@use "variables" as *;
+
+.inscription-section-Amilia {
+  margin-bottom: 2rem;
+}
+
+.inscription-section-Amilia__level {
+  border: 3px solid $main-font-color;
+  border-radius: 5px;
+  padding: 1em;
+
+  img {
+    border-radius: 5px;
+    width: 120px;
+  }
+
+  &--activities ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &--activities {
+    background-color: $blockquote-bg;
+    border-radius: 5px;
+    padding-top: 0.2em;
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-bottom: 0.2em;
+  }
+}
+
+.spots-list-item {
+  min-height: 1em;
+}

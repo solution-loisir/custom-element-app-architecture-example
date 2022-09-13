@@ -1,0 +1,36 @@
+@use "variables";
+
+.loading-shimmer {
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: shimmer;
+  animation-timing-function: linear;
+  background: variables.$color-light-gray;
+  background: linear-gradient(to right, variables.$color-light-gray 8%, #fefefe 18%, variables.$color-light-gray 33%);
+  background-size: 1200px 100%;
+}
+
+
+@-webkit-keyframes shimmer {
+  0% {
+      background-position: -100% 0;
+  }
+  100% {
+      background-position: 100% 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+      background-position: -1200px 0;
+  }
+  100% {
+      background-position: 1200px 0;
+  }
+}
+
+.shimmer-shape {
+  width: 25ch;
+  border-radius: 0.8rem;
+}

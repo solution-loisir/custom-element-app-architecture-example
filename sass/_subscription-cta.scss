@@ -1,0 +1,22 @@
+@use "variables" as *;
+
+div.subscribe-bebe-cta {
+  padding: 0.5em 2.5em 2.5em 2.5em;
+  box-shadow: none;
+  max-width: 346px;
+}
+
+.subscribe-bebe-cta__p {
+  font-size: 2rem;
+  font-family: Quicksand, system-ui, sans-serif;
+  font-weight: 700;
+  @media(min-width: $small) {
+    font-size: 2.5rem;
+  }
+}
+
+div.subscribe-bebe-cta__background {
+  @media(min-width: $small) {
+    background-color: rgba(245, 245, 245, 0.4);
+  }
+}

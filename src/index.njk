@@ -1,0 +1,77 @@
+---
+layout: layout.njk
+title: Tableau de bord
+description: Tableau de bord de Bulle.
+headcss: '<link rel="stylesheet" type="text/css" href="/style/admin.css">'
+headjs: '<script type="module" src="/script/index.js"></script>'
+---
+<main class="flex-column-center wrapper">
+  <header class="flex-column-center">
+    <h1>{{ title }}</h1>
+  </header>
+
+  <program-name>
+    <h2 id="program-name">Téléchargement des données...</h2>
+  </program-name>
+
+  <select-program-name class="flex-column-center">
+    <select id="select-names">
+      <option value="" selected>Téléchargement des données...</option>
+    </select>
+  </select-program-name>
+
+  <spots-table>
+    <table class="spots-table">
+      <caption>Places disponibles</caption>
+      <tr>
+        <th>Total des places offertes</th>
+        <td id="total-spots">0</td>
+      </tr>
+      <tr>
+        <th>Total des places restantes</th>
+        <td id="total-spots-remaining">0</td>
+      </tr>
+      <tr>
+        <th>Total des places réservées</th>
+        <td id="total-spots-reserved">0</td>
+      </tr>
+    </table>
+  </spots-table>
+
+  <finances-table>
+    <table class="finances-table">
+      <caption>Finances</caption>
+      <tr>
+        <th>Revenu brut potentiel</th>
+        <td id="revenu-potentiel">0,00 $</td>
+      </tr>
+      <tr>
+        <th>Revenu brut actuel</th>
+        <td id="revenu-actuel">0,00 $</td>
+      </tr>
+      <tr>
+        <th>Manque à gagné</th>
+        <td id="revenu-manque">0,00 $</td>
+      </tr>
+    </table>
+  </finances-table>
+  
+  <details>
+    <summary class="font-inherit">Niveaux et groupes d'âges</summary>
+    {% include "partials/legende-horaire.html" %}
+  </details>
+
+  <schedule-filter-buttons role="nav">
+    <button data-class="filter-button" data-show="remaining">Disponibles</button>
+    <button data-class="filter-button" data-show="full">Complet</button>
+    <button data-class="filter-button" data-show="all">Tout</button>
+  </schedule-filter-buttons>
+
+  {% schedule %}
+  <update-schedule></update-schedule>
+  {% endschedule %}
+</main>
+
+<footer class="text-center">
+  <p>View source on <a href="https://github.com/solution-loisir/custom-element-app-architecture-example">GitHub</a></p>
+</footer>

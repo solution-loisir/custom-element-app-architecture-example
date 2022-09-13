@@ -1,0 +1,25 @@
+.space-top-12-5 {
+  padding-top: 12.5vh;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  align-items: center;
+}
+
+.wrapper {
+  width: min(80ch, 96vw);
+	margin: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.active-button {
+  background-color: #aaaab5;
+  border: 1px #aaaab5 solid;
+  border-radius: 3px;
+}

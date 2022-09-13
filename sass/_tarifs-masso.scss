@@ -1,0 +1,18 @@
+.tarifs-masso > * {
+  margin: 0;
+  p {
+      margin-bottom: 0;
+  }
+  p.masso-title {
+    font-family: Quicksand, system-ui, sans-serif;
+  }
+  ul {
+      margin-top: 0;
+  }
+  .tarifs {
+      color: var(--hr-color);
+  }
+  &.tax-notice {
+      font-size: 1.35rem;
+  }
+}

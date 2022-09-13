@@ -1,0 +1,24 @@
+@use "variables" as *;
+.nav-btn {
+    &:link {
+        text-decoration: none;
+        margin-right: 18px;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 2px;
+        font-weight: initial;
+        @include nav-color($bg);
+        @include nav-color(border);
+        @media(min-width: $min-nav-width) {
+            display: none;
+        }
+    }
+    &:visited {
+        color: white;
+    }
+    &:active {
+        @media(pointer: fine) {
+            outline: 0;
+        }
+    }
+}

@@ -1,0 +1,123 @@
+@use "variables" as *;
+/* footer rules ___________________________________________________________________________*/
+.page-footer {
+    /*For Internet Explorer support*/
+    display: flex;
+}
+.page-footer {
+    color: #fff;
+    min-height: 100vh;
+    padding: 14px;
+    overflow: auto; 
+    position: relative;
+    z-index: 1010;
+    display: grid;
+    grid-gap: 24px;
+    justify-items: center;
+    background-color: $main-font-color;
+    @media(min-width: $medium) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+.page-footer * {
+    color: inherit;
+}
+.contact {
+    grid-row: 1;
+    @media(min-width: $medium) {
+        grid-column: 3 / 4;
+        margin-top: $foo-margin-top;
+    }
+    h1 {
+        margin-bottom: 1.2rem;
+    }
+    address {
+        display: flex;
+        flex-direction: column;
+        font-style: normal; 
+        a {
+            &:link {
+                color: #fff;
+            }
+            &:hover {
+                color: $niveau1;
+            }
+            margin-bottom: 1.8rem;
+            @media(pointer: fine) {
+                margin-bottom: initial;
+            }
+            &:nth-child(2) {
+                margin-top: 1.6rem;
+                @media(pointer: fine) {
+                    margin-top: initial;
+            }
+            }
+        }
+    }
+}
+.footer-fb {
+    margin-top: 12px;
+    img {
+        width: 60px; 
+        height: 60px;
+    }
+}
+.map {
+    grid-row: 2;
+    height: 0;
+    padding-bottom: 450 / 600 * 100%;
+    @media(min-width: $medium) {
+        width: 400px;
+        padding-bottom: 450 / 600 * 400px;
+        margin-top: 12px;
+        grid-column: 2 / 3;
+        grid-row: 1;
+    }
+    @media(min-width: $large) {
+        width: 600px;
+        padding-bottom: 450 / 600 * 600px;
+    }
+}
+.footer-nav {
+    @media(min-width: $medium) {
+        grid-column: 1 / 2;
+        margin-top: $foo-margin-top;
+    }
+    @media(pointer: coarse) {
+        margin-bottom: 1.6rem;
+    }
+    h1 {
+        margin-bottom: 1.2rem;
+    }
+    li { 
+        font-size: 1.8rem;  
+        @media(min-width: $xl) {
+            font-size: 2.2rem;
+        }
+    }
+    li:nth-last-child(n+2) {
+        margin-bottom: 1rem;
+        @media(pointer: coarse) {
+            margin-bottom: 1.6rem;
+        }
+    }
+    nav ul {
+        display: flex; 
+        flex-direction: column;
+    }
+}
+.credit {
+    position: relative;
+    z-index: 999;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    #{$bg}: #d8d9d8;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}

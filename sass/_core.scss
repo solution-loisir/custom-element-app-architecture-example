@@ -1,0 +1,216 @@
+@use "variables" as *;
+/* index.html rules ___________________________________________________________________________*/
+/*For Internet Explorer support*/
+.index-grid-section {
+    display: flex;
+    flex-wrap: wrap;
+}
+.index-grid-section {
+    display: grid;
+    margin: 12px;
+    grid-gap: 12px;
+    @media(min-width: $small) {
+        max-width: 520px;
+        margin: 12px auto;
+    }
+    @media(min-width: $medium) {
+        max-width: initial;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        width: 800px
+    }
+    @media(min-width: $large) {
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+        width: 924px;
+    }
+}
+.ie-warning {
+    @supports(display: grid) {
+        display: none;
+    }
+}
+.content-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 14px;
+    border-radius: 2.3px;
+    background-color: rgba(241, 241, 241, 0.774);
+    p {
+        max-width: 924px;
+    }
+    @media(min-width: $large) {
+        padding: 0 16px;
+    }
+    h2 {
+        margin-bottom: 1.6rem;
+    }
+}
+.massage {
+    grid-row: 3;
+    @media(min-width: $medium) {
+        grid-row: initial;
+    }
+}
+.massage-cou {
+    grid-row: 4;
+    @media(min-width: $medium) {
+        grid-row: initial;
+    }
+}
+.card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 16px;
+    border-radius: 2.3px;
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1), -2px 0px 4px 0 rgba(0, 0, 0, 0.1);
+    /*For Internet Explorer support*/
+    p {
+        max-width: 424px;
+    }
+    address {
+        text-align: center;
+        font-style: normal; 
+        p {
+            margin-top: 0;
+            margin-bottom: 2rem; 
+            color: #0fbfe8;
+            font-weight: 700;
+        }
+    }
+}
+.call-to-action {
+    &:link {
+        text-decoration: none;
+        padding: 14px 16px;
+        font-size: 1.8rem;
+        font-weight: 700;
+        border-radius: 2.3px;
+        color: #fff;
+        background-color: $nav-color;
+    }
+    &:visited {
+        color: #fff;
+    }
+    @media(min-width: $large) {
+        &:hover {
+            #{$bg}: lighten(#0fbfe8d9, 10%);
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+    &:active {
+        background-color: #0fbfe8d9;
+        &:active {
+            @media(pointer: fine) {
+                outline: 0;
+            }
+        }
+    }
+}
+/*Other pages rules___________________________________________________________________________*/
+.page-main {
+    padding-top: 79px;
+    margin-right: 20px;
+    margin-left: 20px;
+    max-width: 1000px;
+    @media(min-width: $medium){
+        margin-left: 340px;
+    }
+    @media(min-width: $large) {
+        margin-right: 50px;
+        margin-left: 380px;
+    }
+    @media(min-width: $xl) {
+        margin: auto;
+    }
+}
+.auto-toc {
+    display: none;
+    overflow-y: auto;
+    flex-direction: column;
+    max-width: 290px;
+    height: 100vh;
+    position: fixed;
+    top: 79px;
+    border-right: 1px solid #eaecef;
+    @media(min-width: $medium) {
+        display: flex;
+    }
+    ul {
+        list-style: none;
+        li {
+            margin-top: 1rem;
+        }
+    }
+}
+.mobile-toc {
+    /*Positioning the details element makes the full width of the summary element clickable!*/
+    position: relative;
+    margin-top: 1.6rem;
+    @media(min-width: $medium) {
+        display: none;
+    }
+}
+.mobile-toc .auto-toc {
+    display: flex;
+    max-width: initial;
+    height: initial;
+    position: initial;
+    border-right: initial;
+}
+.summary-btn {
+    font-size: 2rem;
+    font-family: inherit;
+    color: #fff;
+    background-color: $nav-color; //lawngreen
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 5px;
+}
+.anchors {
+    padding-top: 80px;
+    margin-top: -60px;
+    &:hover > .title-link {
+        visibility: visible;
+        color: inherit;
+    }
+}
+.title-link {
+    color: inherit;
+    visibility: hidden;
+    &:hover {
+        text-decoration: none;
+    }
+}
+.contact-list li {
+    margin-bottom: 2rem;
+    @media(pointer: fine) {
+        margin-bottom: initial;
+    }
+}
+.profil-card {
+    display: flex;
+    flex-direction: column;
+    @media(min-width: $profil-row-width) {
+        flex-direction: row;
+        & > div:nth-child(2) {
+            margin-left: 3rem;
+        }
+    }
+}
+.profil-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid $nav-color;
+    border-radius: 3px;
+    margin-top: 1.6rem;
+    @media(min-width: $profil-row-width) {
+        width: 150%;
+        padding: 1rem 2rem;
+        margin-top: initial;
+    }
+}

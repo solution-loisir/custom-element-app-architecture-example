@@ -1,0 +1,15 @@
+@use "variables" as *;
+.section-container-404, .search {
+    display: grid;
+    gap: 12px;
+    margin: 12px 14px;
+    @media(min-width: $large) {
+        margin: 12px 225px;
+    }
+}
+.section-container-404 .card p:after {
+    content: "..";
+}
+.emoji-404 {
+    font-size: 2rem;
+}

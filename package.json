@@ -1,0 +1,29 @@
+{
+  "name": "custom-element-app-architecture-example",
+  "version": "1.0.0",
+  "description": "Example of a small vanilla JavaScript app using custom elements for components. This is an open source version of an existing app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx @11ty/eleventy --serve & sass --watch sass:_site/style"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solution-loisir/custom-element-app-architecture-example.git"
+  },
+  "keywords": [
+    "custom-element",
+    "js",
+    "vanilla"
+  ],
+  "author": "Mathieu Huot",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/solution-loisir/custom-element-app-architecture-example/issues"
+  },
+  "homepage": "https://github.com/solution-loisir/custom-element-app-architecture-example#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.2",
+    "sass": "^1.32.8"
+  }
+}
