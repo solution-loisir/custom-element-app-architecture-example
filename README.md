@@ -1,5 +1,7 @@
 # Custom-element-app-architecture-example
 Example of a small vanilla JavaScript app using custom elements for components. This is an open source version of an existing app.
+## To run locally
+Clone the project, then go to the project root and run `npm install`. When it's done installing, you may run the project with `npm start`.
 ## What is it?
 This is a multi page app (MPA) setup with implicit state (no browser router) using [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for dynamic components. The app itself is a dashboard to visualize data from an API. The static part of the app is prerendered using the always robust [11ty](https://www.11ty.dev/) static site genenrator. In this demo, there is only one page. It is akin of the [Islands architecture](https://jasonformat.com/islands-architecture/) as well as the [Jamstack](https://jamstack.org/) architectural approach.
 ## Context
